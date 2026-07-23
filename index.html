@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Life Below Water</title>
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- everything sits inside #page so the overlay can be positioned
+       absolutely on top of the generative background canvas -->
+  <div id="page">
+
+    <!-- generative background canvas gets injected here by p5 -->
+    <div id="bg-sketch" aria-hidden="true"></div>
+
+    <!-- static hero overlay: header meta text + the three artworks,
+         positioned to match the sky band exactly -->
+    <div class="text-overlay">
+
+      <p class="meta meta-left">
+        COMM2754_Digital Media Specialisation 1_26t2<br />
+        24/07/2026
+      </p>
+
+      <p class="meta meta-right">
+        RMIT University Vietnam, Saigon South Campus, School of Communication and Design,<br />
+        Digital Media Program
+      </p>
+
+      <img class="sdg-tag" src="assets/images/SDG_GOAL_14.png" alt="SDG goal 14" />
+
+      <p class="subtitle">
+        Conserve and sustainably use the oceans, seas and marine resources for sustainable development
+      </p>
+
+      <img class="title-art" src="assets/images/title.png" alt="Life Below Water" />
+
+      <img class="quote-art" src="assets/images/quote.png" alt="There is no such thing as 'away'. When we throw anything away it must go somewhere. - Annie Leonard" />
+     
+      <img class="cta-title" src="assets/images/cta.png" alt="Pick up litter before it reaches the ocean."/>
+
+      <p class="paragraph">
+      Annie Leonard's quote, "There is no such thing as 'away.' When we throw
+      anything away it must go somewhere," reminds us that waste we discard on
+      land often ends up in the ocean, harming marine life and ecosystems,
+      which is the exact concern at the heart of SDG 14: Life Below Water.
+      Achieving this goal means recognizing that our trash doesn't disappear;
+      it becomes someone else's or the ocean's problem. Stop throwing waste
+      into the ocean, and start taking responsibility for where it truly goes.
+      </p>
+
+      <p class="footer-text">
+      A project by Tieu Dinh Ngoc.<br />
+      Nga 5 chuong cho members: Trinh Tuan Hung, Ho Kieu Phuong, Tran Tung Phuong, Pham Hoai An.<br />
+      Onlinelad (2 July 2026) There Is No Such Thing as Away: Annie Leonard on the Responsibility We Cannot Escape, 
+      Onlinelad website, accessed 14 July 2026. https://onlinelad.com/blog/no-such-thing-as-away-annie-leonard/
+    </p>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

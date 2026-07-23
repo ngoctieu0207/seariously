@@ -1,0 +1,156 @@
+:root{
+  --ink: #0e2a3d;
+  --meta: #215e95; /* header / subtitle text colour, sampled from the mock */
+}
+
+@font-face{
+  font-family: "Tw Cen MT Bold";
+  src: url("assets/font/Tw Cen MT Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #0e2a3d;
+}
+
+/* #page wraps the canvas + the overlay so the overlay can be
+   positioned absolutely relative to it */
+#page{
+  position: relative;
+  width: 100%;
+}
+
+/* canvas sits in normal document flow, sized to the artwork's full
+   stacked height, so the page scrolls through it */
+#bg-sketch{
+  width: 100%;
+  line-height: 0; /* kill the inline-canvas whitespace gap */
+}
+#bg-sketch canvas{
+  display: block;
+}
+
+/* ------------------------------------------------------------------
+   Text overlay — contains all static interface elements
+   (header, title, quote, CTA, paragraph and footer).
+
+   The wrapper is positioned over the canvas and keeps the same
+   responsive coordinate system as the artwork, allowing every element
+   positioned with percentage-based top/left values to scale
+   consistently across different screen sizes.
+------------------------------------------------------------------- */
+.text-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 61.822%; /* 502 / 812 — locks the overlay to the sky band's aspect ratio */
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+}
+
+.text-overlay *{
+  position: absolute;
+  margin: 0;
+  font-family: "Tw Cen MT Bold", sans-serif;
+  color: var(--meta);
+}
+
+.meta{
+  top: 1%;
+  font-size: clamp(14px, 1.35vw, 18px);
+  line-height: 1.3;
+  font-weight: 700;
+  max-width: 47%;
+}
+.meta-left{
+  left: 1%;
+  text-align: left;
+}
+.meta-right{
+  right: 1%;
+  text-align: right;
+}
+
+.sdg-tag{
+  left: 4.9%;
+  top: 15%;
+  width: 22%;
+  height: auto;
+  transform: rotate(-5deg);
+}
+
+.subtitle{
+  top: 24%;
+  left:62.5%;
+  transform: translateX(-50%);
+  width: 82%;
+  text-align: center;
+  font-size: clamp(22px, 1.7vw, 26px);
+  font-weight: 700;
+}
+
+.title-art{
+  left: 50%;
+  top: 30%;
+  width: 84%;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.quote-art{
+  left: 50%;
+  top: 60%;
+  width: 73%;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.cta-title{
+  position: absolute;
+
+  width: 50%;
+  height: auto;
+  top: 185.5%;
+  left: 28%;
+  transform: translateX(-50%);
+}
+
+.paragraph{
+  position: absolute;
+
+  width: 34%;
+  top: 180%;
+  left: 62%;
+  font-family: "Tw Cen MT Bold", sans-serif;
+  font-size: clamp(18px, 1.2vw, 22px);
+  line-height: 1.45;
+  text-align: justify;
+  text-align-last: center;
+  color: #e8dcbe;
+
+  text-shadow:
+    1px 1px 2px rgba(0,0,0,.35);
+}
+
+.footer-text{
+  position: absolute;
+  width: 48%;
+  height: auto;
+  top: 224%;
+  left: 24.5%;
+  transform: translateX(-50%);
+  font-family: "Tw Cen MT Bold", sans-serif;
+  font-size: clamp(17px, 1.2vw, 21px);
+  line-height: 1.5;
+  color: var(--ink);
+}
